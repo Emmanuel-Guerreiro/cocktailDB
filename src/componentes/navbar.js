@@ -6,12 +6,13 @@ const NavBar = () => {
     <div>
       <nav
         id="navbar"
-        className="navbar navbar-expand-lg navbar-light bg-light"
+        className="navbar navbar-expand-lg navbar-dark bg-primary"
       >
         <Link className="navbar-brand" to="/">
           The cocktail DB
         </Link>
         <button
+          id="button-navbar"
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"

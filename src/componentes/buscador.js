@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Buscador = ({ setBuscador }) => {
+const Buscador = ({ setBuscador, listaTragos }) => {
   const inputHandler = (e) => {
     setBuscador(e.target.value);
   };

@@ -1,10 +1,13 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import $ from "jquery";
 import Popper from "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+
+//importo hojas de css
+import "./App.css";
+import "./estilos/Componentes.css";
 
 //importo componentes
 import NavBar from "./componentes/navbar";
@@ -14,6 +17,8 @@ import Home from "./paginas/home";
 import About from "./paginas/about";
 import TragoIndividual from "./paginas/tragoIndividual";
 import Error from "./paginas/error";
+
+//TODO: borrar el ROUTE de experimentacion
 
 function App() {
   return (
@@ -28,6 +33,9 @@ function App() {
             <About />
           </Route>
           <Route path="/cocktail/:id">
+            <TragoIndividual />
+          </Route>
+          <Route path="/experimentacion">
             <TragoIndividual />
           </Route>
           <Route path="*">

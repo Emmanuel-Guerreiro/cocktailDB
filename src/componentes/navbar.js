@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const bootstrapStyle =
+    "navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 bg-white rounded";
+
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
+      <nav className={`navBar ${bootstrapStyle}`}>
         <Link className="navbar-brand" to="/">
           CocktailDB
         </Link>

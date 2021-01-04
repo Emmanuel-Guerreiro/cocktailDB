@@ -4,15 +4,11 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <nav
-        id="navbar"
-        className="navbar navbar-expand-lg navbar-dark bg-primary"
-      >
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
         <Link className="navbar-brand" to="/">
-          The cocktail DB
+          CocktailDB
         </Link>
         <button
-          id="button-navbar"
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -26,12 +22,12 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/">
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>

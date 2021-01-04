@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+
+//importo componentes
+import Buscador from "../componentes/buscador";
+import ListaTragos from "../componentes/listaTragos";
 
 const Home = () => {
-    return(
-        <div>
-            Soy el Home
-        </div>
-    );
-}
+  return (
+    <div>
+      <Buscador />
+      <ListaTragos />
+    </div>
+  );
+};
 
 export default Home;

@@ -19,6 +19,8 @@ import TragoIndividual from "./paginas/tragoIndividual";
 import Error from "./paginas/error";
 
 //TODO: borrar el ROUTE de experimentacion
+//TODO: ver como trabajar con CSS y bootstrap sin necesidad de !important
+//TODO: ESPECIFICIDAD CSS!!!!
 
 function App() {
   return (

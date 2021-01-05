@@ -4,9 +4,12 @@ import React from "react";
 import TarjetaPreview from "./tarjetaPreview";
 
 const ListaTragos = ({ buscador, resultadoListaTragos }) => {
-  return (
-    <div className="d-flex flex-wrap m-4 justify-content-center">
-      {resultadoListaTragos.map((trago) => {
+  return <div className="d-flex flex-wrap m-4 justify-content-center"></div>;
+};
+
+export default ListaTragos;
+
+/*{resultadoListaTragos.map((trago) => {
         return (
           <TarjetaPreview
             key={trago.id}
@@ -15,9 +18,4 @@ const ListaTragos = ({ buscador, resultadoListaTragos }) => {
             imagen={trago.imagen}
           />
         );
-      })}
-    </div>
-  );
-};
-
-export default ListaTragos;
+      })} */

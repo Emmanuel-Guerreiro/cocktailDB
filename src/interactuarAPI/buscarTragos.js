@@ -1,15 +1,16 @@
+//TODO: ver si implementar a traves de un hook por una cuestion de claridad
+
 //TODO: ver como formatear los ingredientes y sus cantidades en alguna estructura de datos
 //que los represente mejor
-
-//TODO: IMPLEMENTAR ESTO EN UN HOOK PORQUE LO NECESITO VARIAS VECES EN EL HOME
-
 //TODO: ver que hacer ante error en el fetch de la data
-//TODO: como logro mas especificidad en la busqueda y no busque siempre desde a
 
 const buscaTragos = async (cadenaBuscar) => {
   try {
+    const busqueda = cadenaBuscar === "" ? "a" : cadenaBuscar;
     const tragos = await fetch(
-      `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${cadenaBuscar}`
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${busqueda.charAt(
+        0
+      )}`
     );
     const tragosJSON = await tragos.json();
     const tragoFormateado = formatearTragos(tragosJSON.drinks);

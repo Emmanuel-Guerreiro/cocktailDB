@@ -24,7 +24,7 @@ const formatearTragos = (arrayTragos) => {
   const arrayTragosFormato = arrayTragos.map((trago) => {
     return {
       id: trago.idDrink,
-      nombre: trago.strDrink,
+      nombre: trago.strDrink.toUpperCase(),
       tipo: trago.strAlcoholic,
       imagen: trago.strDrinkThumb,
       instrucciones: trago.strInstructions,

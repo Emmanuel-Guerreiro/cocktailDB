@@ -4,22 +4,24 @@ import React, { useEffect, useState } from "react";
 import Buscador from "../componentes/buscador";
 import ListaTragos from "../componentes/listaTragos";
 
-//importo otras funciones
-import buscaTragos from "../interactuarAPI/buscarTragos";
+//importo funciones varias
+import buscaTragos from "../funciones/buscarTragos";
+import filtrarTragos from "../funciones/filtrarTragos";
 
 //TODO: Revisar TODO de buscarTragos.js
-//TODO: como manejar listaTragos, no parece ser un array si no la devolucion de la promise
+//TODO: Implementar la busqueda y armado del array con un hook personalizado
+//TODO: Como implementar el hook armado en buscarTragos.js
 
 const Home = () => {
   /*El estado de buscador es la entrada que entra desde buscador
   y lo uso para pasar a la lista como tiene que filtrar lo que muestra*/
   const [buscador, setBuscador] = useState("");
   const [resultadoListaTragos, setResultadoListaTragos] = useState([]);
-
-  /*Aca hago el fetch de los tragos a la API y lo paso como una prop a
-  la Lista de Tragos para que ahi se filtre */
+  const [listaNoMotrar, setListaNoMostrar] = useState([]);
+  const [buscar, setBuscar] = useState(true);
 
   useEffect(() => {
+<<<<<<< HEAD
     //defino la lista de tragos con el valor que devuelve BuscaTragos
     // en funcion del estado del buscador
     if (buscador.length === 3) {
@@ -28,13 +30,25 @@ const Home = () => {
         setResultadoListaTragos(res)
       })
       console.log(resultadoListaTragos);
+=======
+    /*este primer pedazo se encarga de pedir los datos a la API, por lo que solo
+    necesita el flag de buscar y usa, dentro de la funbcion de busqueda la primnera letra */
+    if (buscar) {
+      buscaTragos(buscador).then((res) => {
+        setListaNoMostrar(res);
+        console.log(res);
+      });
+      setBuscar((prevState) => !prevState);
+>>>>>>> refs/remotes/origin/master
     }
-    //Hacer que si buscador.length===0 ponga desde a
-  }, [buscador]);
+    setResultadoListaTragos(filtrarTragos(listaNoMotrar, buscador));
+    /*Aca se encarga de filtrar dentro de mi lista de tragos ya pedida a la API (con la primera
+    letra que se le paso) para que pueda buscar un nombre mas especifico */
+  }, [buscador, buscar, listaNoMotrar, resultadoListaTragos]);
 
   return (
-    <div>
-      <Buscador setBuscador={setBuscador} />
+    <div className="w-100 d-flex justify-content-center flex-wrap">
+      <Buscador setBuscador={setBuscador} setBuscar={setBuscar} />
       <ListaTragos
         buscador={buscador}
         resultadoListaTragos={resultadoListaTragos}

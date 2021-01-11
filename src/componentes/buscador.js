@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Buscador = ({ setBuscador, listaTragos }) => {
+const Buscador = ({ setBuscador, setBuscar }) => {
   const inputHandler = (e) => {
     setBuscador(e.target.value);
+
+    if (e.target.value.length <= 1) {
+      setBuscar((prevState) => !prevState);
+    }
   };
 
   return (

@@ -23,9 +23,11 @@ const Home = () => {
     //defino la lista de tragos con el valor que devuelve BuscaTragos
     // en funcion del estado del buscador
     if (buscador.length === 3) {
-      const resultado = buscaTragos(buscador);
-      setResultadoListaTragos(resultado);
-      console.log(resultado);
+      
+      buscaTragos(buscador).then(res => {
+        setResultadoListaTragos(res)
+      })
+      console.log(resultadoListaTragos);
     }
     //Hacer que si buscador.length===0 ponga desde a
   }, [buscador]);

@@ -11,6 +11,7 @@ import "./estilos/Componentes.css";
 
 //importo componentes
 import NavBar from "./componentes/navbar";
+import TarjetaTrago from "./componentes/tarjetaTrago";
 
 //importo paginas
 import Home from "./paginas/home";
@@ -34,12 +35,7 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/cocktail/:id">
-            <TragoIndividual />
-          </Route>
-          <Route path="/experimentacion">
-            <TragoIndividual />
-          </Route>
+          <Route path="/cocktail/:id" component={<TarjetaTrago />} />
           <Route path="*">
             <Error />
           </Route>

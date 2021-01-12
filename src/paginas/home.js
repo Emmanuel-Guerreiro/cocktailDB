@@ -21,30 +21,20 @@ const Home = () => {
   const [buscar, setBuscar] = useState(true);
 
   useEffect(() => {
-<<<<<<< HEAD
-    //defino la lista de tragos con el valor que devuelve BuscaTragos
-    // en funcion del estado del buscador
-    if (buscador.length === 3) {
-      
-      buscaTragos(buscador).then(res => {
-        setResultadoListaTragos(res)
-      })
-      console.log(resultadoListaTragos);
-=======
     /*este primer pedazo se encarga de pedir los datos a la API, por lo que solo
     necesita el flag de buscar y usa, dentro de la funbcion de busqueda la primnera letra */
     if (buscar) {
       buscaTragos(buscador).then((res) => {
         setListaNoMostrar(res);
-        console.log(res);
       });
       setBuscar((prevState) => !prevState);
->>>>>>> refs/remotes/origin/master
     }
-    setResultadoListaTragos(filtrarTragos(listaNoMotrar, buscador));
-    /*Aca se encarga de filtrar dentro de mi lista de tragos ya pedida a la API (con la primera
-    letra que se le paso) para que pueda buscar un nombre mas especifico */
-  }, [buscador, buscar, listaNoMotrar, resultadoListaTragos]);
+    if (buscador.length === 0) {
+      setResultadoListaTragos(listaNoMotrar);
+    } else {
+      setResultadoListaTragos(filtrarTragos(listaNoMotrar, buscador));
+    }
+  }, [buscador, buscar, listaNoMotrar]);
 
   return (
     <div className="w-100 d-flex justify-content-center flex-wrap">

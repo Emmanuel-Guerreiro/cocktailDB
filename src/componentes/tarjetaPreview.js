@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TarjetaPreview = ({ nombre, tipo, imagen }) => {
+const TarjetaPreview = ({ id, nombre, tipo, imagen }) => {
   return (
     <div className="m-2">
       <div
@@ -12,7 +12,7 @@ const TarjetaPreview = ({ nombre, tipo, imagen }) => {
         <div className="card-body">
           <h5 className="card-title">{nombre}</h5>
           <p className="card-text">{tipo}</p>
-          <Link to="#" className="btn btn-primary">
+          <Link to={`/cocktail/${id}`} className="btn btn-primary">
             Detalles
           </Link>
         </div>

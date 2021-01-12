@@ -1,6 +1,7 @@
 import React from "react";
 
-const TarjetaTrago = () => {
+const TarjetaTrago = ({ match }) => {
+  console.log(match);
   return (
     <div>
       soy una tarjeta

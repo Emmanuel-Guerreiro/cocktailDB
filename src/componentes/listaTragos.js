@@ -10,6 +10,7 @@ const ListaTragos = ({ buscador, resultadoListaTragos }) => {
         return (
           <TarjetaPreview
             key={trago.id}
+            id={trago.id}
             nombre={trago.nombre}
             tipo={trago.tipo}
             imagen={trago.imagen}

@@ -24,7 +24,7 @@ const Home = () => {
     /*este primer pedazo se encarga de pedir los datos a la API, por lo que solo
     necesita el flag de buscar y usa, dentro de la funbcion de busqueda la primnera letra */
     if (buscar) {
-      buscaTragos(buscador).then((res) => {
+      buscaTragos("nombre", buscador).then((res) => {
         setListaNoMostrar(res);
       });
       setBuscar((prevState) => !prevState);
